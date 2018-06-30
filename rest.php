@@ -1,7 +1,7 @@
 <?php
 	require_once("config/database.php");
 	
-	$con = new database(getenv("RDS_SERVER"), "root", "", "users");
+	$con = new database(getenv("RDS_SERVER"), getenv("RDS_USER"), getenv("RDS_PASSWORD"), "users");
 	$con->set_charset('UTF8');
 	
 	$request = basename(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
